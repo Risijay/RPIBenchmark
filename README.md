@@ -9,7 +9,7 @@ This code has been slightly modified to stress the pi even more.
 Its super easy!
 copy and paste this code into your terminal:
 <br>
-curl -L https://raw.githubusercontent.com/risijay/rpibenchmark/master/benchmark.sh | sudo bash
+curl -L https://raw.githubusercontent.com/risijay/rpibenchmark/master/rpibenchmark.sh | sudo bash
 <br>
 # Information
 This program will run 4 tests:
