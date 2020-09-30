@@ -23,7 +23,7 @@ At the end of the test (depending on your cooling solution) your pi will Thermal
 (our tests show that the bear pi will throttle after the threads test)
 <br>
 This test will show how your pi performs and what tasks it can handle
-# Notes
+# Recomendations
 We highly recommend any type of cooling for your pi. It can be as simple as a fan or a small heatsink but always for the best results you should cool your pi.
 <br>
 Since the pi will hit 80° Celsius which is where it starts to throttle.
