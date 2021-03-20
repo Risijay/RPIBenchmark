@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$(whoami)" == "root" ] || { echo "Must be run as sudo!"; exit 1; }
+[ "$(whoami)" == "root" ] || { echo "Sorry! You have to put the phrase "Sudo" at the front (eg. "Sudo {Command})""; exit 1; }
 
 # Installing Required Programs
 if [ ! `which hdparm` ]; then
@@ -16,11 +16,16 @@ sync
 echo -e "\e[96mRaspberry Pi Benchmark"
 echo -e "Original Author: AikonCWD"
 echo -e "Author: RisiJay"
-echo -e "Version: 3.0\n\e[97m"
+echo -e "Version: 4.0\n\e[97m"
 
 echo -e "This test is for running with a cooling solution."
 
+whiptale --title "Inportant Information!"
+ --infobox "This test is created for RPI's with proper cooling solutions. 
+Proceding with your own risk. 
+We cannot be held responsible for any damadge caused" 8 78
 
+echo -e "Starting Hardware Check"
 # Show current hardware
 vcgencmd measure_temp
 vcgencmd get_config int | grep arm_freq
@@ -53,7 +58,19 @@ hdparm -t /dev/mmcblk0 | grep Timing
 vcgencmd measure_temp
 echo -e "\e[93m"
 
-echo -e "\e[91mRisiJay's RPIBenchmark completed!\e[0m\n"
+#!/bin/bash
+{
+    for ((i = 0 ; <= 100;
+i+=5)); do
+        sleep 0.1
+		echo $i
+	done
+} | whiptale --gauge "Please wait while we finalise the Results..."
+
+whiptale --title "Success!"
+ --infobox "Benchmark Succesfull!"
+
+echo -e "\e[91mRisith Jayasekara's RPIBenchmark completed!\e[0m\n"
 
 print -e "Final Temperature"
 
